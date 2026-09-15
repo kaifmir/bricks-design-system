@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bricks Design System — Case Study — Kaif Saleem</title>
+  <meta name="description" content="Case study: building the Bricks Design System end-to-end, from audit to tokens, components, AI-assisted scaling and measured ROI." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="case-study.css" />
+</head>
+<body>
+  <a class="skip" href="#content">Skip to case study</a>
+
+  <header class="chrome" aria-label="Case study controls">
+    <div class="chrome__brand">
+      <span class="chrome__mark" aria-hidden="true"></span>
+      <div>
+        <p class="chrome__title">Bricks Design System</p>
+        <p class="chrome__by">Case study by Kaif Saleem</p>
+      </div>
+    </div>
+    <nav class="chrome__nav">
+      <a class="chrome__link" href="index.html">View slide deck →</a>
+      <button type="button" class="btn" id="toc-toggle" aria-expanded="false" aria-controls="toc" aria-label="Toggle contents">☰</button>
+    </nav>
+  </header>
+
+  <div class="study">
+    <aside class="study__toc" id="toc" aria-label="Case study contents">
+      <p class="study__toc-heading">Contents</p>
+      <ol>
+        <li><a href="#why">Why we did it</a></li>
+        <li><a href="#discover">Audit &amp; discovery</a></li>
+        <li><a href="#tokens">Tokens &amp; variables</a></li>
+        <li><a href="#semantic">Semantic layer</a></li>
+        <li><a href="#typography">Typography</a></li>
+        <li><a href="#spacing">Spacing &amp; radius</a></li>
+        <li><a href="#icons">Icons</a></li>
+        <li><a href="#grids">Grids &amp; patterns</a></li>
+        <li><a href="#components">Components: buttons</a></li>
+        <li><a href="#ai">Scaling with AI</a></li>
+        <li><a href="#handoff">Designer × developer handoff</a></li>
+        <li><a href="#podkit">Pod design kit</a></li>
+        <li><a href="#benefits">Business benefits</a></li>
+        <li><a href="#impact">Impact on teams</a></li>
+        <li><a href="#roi">Expected ROI</a></li>
+      </ol>
+      <a class="study__toc-deck" href="index.html">View slide deck →</a>
+    </aside>
+
+    <main id="content" class="study__content" tabindex="-1">
+      <section class="study__hero">
+        <p class="eyebrow">Case study</p>
+        <h1>Bricks Design System</h1>
+        <p class="study__subtitle">Building a design system end-to-end — by Kaif Saleem</p>
+        <div class="study__hero-actions">
+          <a class="btn btn--primary" href="#why">Start reading</a>
+          <a class="btn btn--ghost" href="index.html">Browse the 25-slide deck</a>
+        </div>
+      </section>
+
+      <section id="why" class="study__section">
+        <p class="study__kicker">Structuring design system</p>
+        <h2>Why we did it</h2>
+        <div class="study__grid">
+          <div class="study__prose">
+            <ol class="study__reasons">
+              <li><strong>Too many inconsistencies in the product.</strong> The same pattern — an upgrade nudge, a listing card, a plan comparison — looked and behaved differently depending on which screen and which designer touched it.</li>
+              <li><strong>Loss of competitiveness.</strong> Without a system, every screen went design → build from scratch. With one, teams could design once and reuse components, cutting the path from idea to shipped UI.</li>
+              <li><strong>Redundancy in day-to-day life.</strong> Designers and engineers kept re-asking each other the same questions — "what's our primary color for buttons?" — because there was no single source of truth to check first.</li>
+            </ol>
+          </div>
+          <figure class="study__figure">
+            <img src="slides/slide-02.jpg" alt="Slide comparing inconsistent listing screens, a design-system vs. no-design-system workflow, and repeated designer/developer chat threads asking for token values." loading="lazy" />
+            <figcaption><a href="index.html#2">View this slide in the deck →</a></figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="discover" class="study__section">
+        <p class="study__kicker">Audit practice · Discover</p>
+        <h2>Mapping the current situation</h2>
+        <div class="study__grid">
+          <div class="study__prose">
+            <p>Before defining a single token, the existing product was audited screen by screen — search filters, listing cards, payment history, subscription plans, owner tools — across mobile and web.</p>
+            <ul class="study__checklist">
+              <li>Inventoried every live pattern across the product, not just the ones we remembered.</li>
+              <li>Tagged each finding by frequency and risk, not just how ugly it looked.</li>
+              <li>Flagged duplicate, contradictory, or off-brand components as we went.</li>
+              <li>Turned the audit into the system's first roadmap, in priority order.</li>
+            </ul>
+          </div>
+          <figure class="study__figure study__figure--pair">
+            <img src="slides/slide-03.jpg" alt="Real product screens audited: listing detail, plan comparison, property search results, payment history." loading="lazy" />
+            <img src="slides/slide-04.jpg" alt="Mobile screens annotated with red boxes highlighting inconsistent filter chips, tabs, and sort controls." loading="lazy" />
+            <figcaption><a href="index.html#3">View slides 3–4 in the deck →</a></figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="tokens" class="study__section">
+        <p class="study__kicker">Structuring of design system · Foundation</p>
+        <h2>Define tokens &amp; variables</h2>
+        <div class="study__grid">
+          <div class="study__prose">
+            <p>The foundation is a two-level token architecture built with Figma Variables: 100 raw <code>color_primitives</code> feed 63 semantic <code>color_tokens</code>, alongside dedicated <code>spacing</code> (15), <code>radius</code> (9) and <code>typography</code> (34) collections — 221 variables in total.</p>
+            <p>The Primary Purple palette (P-50 → P-900) was tuned for smoother chroma transitions — luxurious and modern without tipping into neon — paired with a Warm Neutral scale (N-0 → N-900) for surfaces and borders, plus Pistachio, Lavender, Butter and Grey accents for semantic states.</p>
+            <p>Every variable is scoped to the Figma properties it's meant for (fill, corner radius, gap) so a color like <code>#3A11AD</code> only ever shows up where it belongs, not on every text layer in the file.</p>
+          </div>
+          <figure class="study__figure study__figure--pair">
+            <img src="slides/slide-05.jpg" alt="Figma Variables panel showing color_tokens, color_primitives, spacing, radius and typography collections, and a variable's scoped color settings." loading="lazy" />
+            <img src="slides/slide-06.jpg" alt="Primary Purple and Warm Neutral palettes with accent swatches and semantic Info/Success/Warning/Danger banners, next to the color_primitives table and a component's generated CSS." loading="lazy" />
+            <figcaption><a href="index.html#5">View slides 5–6 in the deck →</a></figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="semantic" class="study__section">
+        <p class="study__kicker">Foundation</p>
+        <h2>Adding a semantic layer</h2>
+        <div class="study__grid">
+          <div class="study__prose">
+            <p>Raw primitives don't tell anyone when to use them, so each state — Info, Success, Warning, Danger — got four semantic tokens: Surface, Border, Icon and Text, each pointing to a specific primitive step.</p>
+            <p>Every token also carries a documented role, e.g. <em>Semantic Surface/info → Blue/50 → background for banners, tags and alert containers</em>, so the choice between layers is never a guess. In code, that becomes <code>background: var(--surface-white, #FFF)</code> — a token name with a raw-value fallback baked right into the component.</p>
+          </div>
+          <figure class="study__figure">
+            <img src="slides/slide-07.jpg" alt="Table mapping semantic tokens to primitive steps for Info, Success, Warning and Danger states, next to the semantic_surface/border/icons/text variable groups and generated CSS with token fallbacks." loading="lazy" />
+            <figcaption><a href="index.html#7">View this slide in the deck →</a></figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="typography" class="study__section">
+        <p class="study__kicker">Foundation</p>
+        <h2>Typography</h2>
+        <div class="study__grid">
+          <div class="study__prose">
+            <p>One font family — Google Sans Flex — kept deliberately boring, in four weights (Regular, Medium, SemiBold, Bold), driving a full scale of Display, Heading (H1–H6), Body and Caption/Label styles: 34 typography variables in total.</p>
+            <p>Web and mobile sizes are tuned independently per style (Display Large runs 56/64 on web vs. 40/48 on mobile), while Caption and Label stay pixel-identical across devices so the smallest text in the product never surprises anyone.</p>
+          </div>
+          <figure class="study__figure study__figure--pair">
+            <img src="slides/slide-08.jpg" alt="Figma Variables panel for the typography collection listing font_family, font_weight, font_size, font_height and letter_spacing groups." loading="lazy" />
+            <img src="slides/slide-09.jpg" alt="Full type specimen table comparing Display, Heading, Body and Caption/Label styles at their web and mobile sizes." loading="lazy" />
+            <figcaption><a href="index.html#8">View slides 8–9 in the deck →</a></figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="spacing" class="study__section">
+        <p class="study__kicker">Foundation</p>
+        <h2>Spacing &amp; radius</h2>
+        <div class="study__grid">
+          <div class="study__prose">
+            <p>Spacing runs 15 tokens deep, from <code>none</code> (0px) to <code>8xl</code> (128px); radius runs 9, from <code>none</code> (0px) to <code>full</code> (999px) for pills and avatars. Both scales are scoped to the properties they're for — width/height and gap for spacing, corner radius only for radius — so a designer can't accidentally apply a spacing token where a radius token belongs.</p>
+          </div>
+          <figure class="study__figure study__figure--pair">
+            <img src="slides/slide-10.jpg" alt="Figma Variables panels for the spacing and radius collections with their number-scope settings." loading="lazy" />
+            <img src="slides/slide-11.jpg" alt="Bar-chart style visualization of the 15-step spacing scale and the 9-step radius scale from square to fully rounded." loading="lazy" />
+            <figcaption><a href="index.html#10">View slides 10–11 in the deck →</a></figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="icons" class="study__section">
+        <p class="study__kicker">Foundation</p>
+        <h2>Icons</h2>
+        <div class="study__grid">
+          <div class="study__prose">
+            <p>System icons ship in matched outline / filled / disabled states — Heart, Arrow, X-circle, Delete, Lock, Warning, Crown — with consistent stroke weight so any icon can swap into any state without redrawing it.</p>
+            <p>A separate set of 3D icons (ATM, train, shop-house, dental chair, pool, meter box, CCTV, car, park bench, gym) covers marketing moments and empty states, matching the same illustrated, slightly whimsical tone as the rest of the system.</p>
+          </div>
+          <figure class="study__figure">
+            <img src="slides/slide-12.jpg" alt="Grid of system icons in outline, filled and disabled states, above a row of illustrated 3D icons." loading="lazy" />
+            <figcaption><a href="index.html#12">View this slide in the deck →</a></figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="grids" class="study__section">
+        <p class="study__kicker">Foundation</p>
+        <h2>Grids &amp; patterns</h2>
+        <div class="study__grid">
+          <div class="study__prose">
+            <p>Three layout structures cover the product: Centered (content boxed with margin either side), Full Width (content stretches, padding does the work) and Mixed (a main panel plus an aligned side panel). Columns, gutters, padding and container widths are all tokenized per breakpoint — 4 columns on mobile up to 12 on desktop.</p>
+            <p>Scroll-snap behaviour for card carousels was also documented per platform, comparing snap physics, momentum decay and peek-next-card support across mobile web, desktop web, iOS and Android — because native apps handle this far better than the browser does, and the system needed to say so explicitly.</p>
+          </div>
+          <figure class="study__figure">
+            <img src="slides/slide-13.jpg" alt="Diagrams of Centered, Full Width and Mixed layout structures, grid token tables, and a snap-logic comparison across mobile web, desktop web, iOS and Android." loading="lazy" />
+            <figcaption><a href="index.html#13">View this slide in the deck →</a></figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="components" class="study__section">
+        <p class="study__kicker">Structuring atoms · Components</p>
+        <h2>Components: buttons</h2>
+        <div class="study__grid">
+          <div class="study__prose">
+            <p>Every atom is built with explicit auto-layout rules rather than eyeballed pixels: the button hugs its label, padding comes from the <code>xs</code>/<code>s</code> spacing tokens, the icon gap from <code>2xs</code>, and the corner from the <code>s</code> radius token.</p>
+            <p>Variant, size, state, label and icon slots are all exposed as component properties, so a designer swaps a variant from a dropdown instead of detaching and hacking the instance. The dev-facing code panel mirrors this exactly — <code>padding: var(--xs, 8px) var(--s, 12px)</code>, <code>background: var(--surface-brand, #4A16D9)</code> — token name and fallback value together, ready to paste.</p>
+          </div>
+          <figure class="study__figure">
+            <img src="slides/slide-14.jpg" alt="Annotated button component showing hug sizing, padding and gap tokens, its Figma properties panel, and the generated CSS with token variables and fallbacks." loading="lazy" />
+            <figcaption><a href="index.html#14">View this slide in the deck →</a></figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="ai" class="study__section">
+        <p class="study__kicker">Bricks design system · Scaling with AI</p>
+        <h2>Scaling component creation with AI</h2>
+        <div class="study__grid">
+          <div class="study__prose">
+            <p>Instead of prompting AI from scratch for every component, the rules got written down once: a <code>DESIGN.md</code> guideline (~2,700 lines) encoding the design language, component principles, do's and don'ts, properties, states and expected behaviours — including what the AI should ask about when a prompt was incomplete, instead of guessing.</p>
+            <p>The team used that guideline alongside their prompts to generate first-draft components faster (branches like <code>feat/accordion-molecule</code> and <code>feat/icon-button-docs</code>), while every generated component still went through design review before joining the core system. The guideline also tracked real token usage — <code>text-secondary</code> referenced 472 times, <code>background</code> 250 — to prove adoption, not just intent.</p>
+            <blockquote class="study__quote">The goal wasn't to automate design. It was to automate the repetitive decisions so designers could focus on the quality of the system.</blockquote>
+          </div>
+          <figure class="study__figure study__figure--pair">
+            <img src="slides/slide-15.jpg" alt="Diagram of the four-step AI scaling process: define the rules, guide the AI, build with consistency, design review." loading="lazy" />
+            <img src="slides/slide-16.jpg" alt="DESIGN.md file preview with a color usage-count table, next to a branches list showing AI-generated component branches with CI status." loading="lazy" />
+            <figcaption><a href="index.html#15">View slides 15–16 in the deck →</a></figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="handoff" class="study__section">
+        <p class="study__kicker">Handoff</p>
+        <h2>Designer × developer</h2>
+        <div class="study__grid">
+          <div class="study__prose">
+            <p>The handoff is a closed loop, not a one-way delivery. Designers establish foundations (color, type, spacing) → developers turn them into design tokens (JSON, CSS variables, style dictionary). Designers develop components with variables and states → developers produce component specs (redlines, annotations). Designers write usage guidelines and accessibility notes → developers turn them into documentation.</p>
+            <p>Developers write the code docs (Storybook, README, API docs), which feed back into the designers' visual QA and design review — and accessibility plus performance feedback closes the loop by refining tokens and components for the next iteration.</p>
+          </div>
+          <figure class="study__figure">
+            <img src="slides/slide-17.jpg" alt="Flow diagram of the designer-to-developer handoff loop: foundations, components, guidelines and QA on one side; tokens, specs, docs and refinement on the other." loading="lazy" />
+            <figcaption><a href="index.html#17">View this slide in the deck →</a></figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="podkit" class="study__section">
+        <p class="study__kicker">Owner kit</p>
+        <h2>Pod design kit</h2>
+        <div class="study__grid">
+          <div class="study__prose">
+            <p>On top of the core system sits a reusable kit of business-specific patterns — enquiry nudges, dynamic price nudges, enquiry and demand/supply widgets, and a full bank of promotional banners — built once so every product pod could assemble owner-facing screens consistently, instead of redesigning the same upgrade prompt from scratch each time.</p>
+          </div>
+          <figure class="study__figure">
+            <img src="slides/slide-18.jpg" alt="Library of owner-facing widgets and banner variants: enquiry nudges, dynamic price nudges, demand and supply widgets, and promotional banner components." loading="lazy" />
+            <figcaption><a href="index.html#18">View this slide in the deck →</a></figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="benefits" class="study__section">
+        <p class="study__kicker">Design system</p>
+        <h2>Business benefits</h2>
+        <div class="study__grid">
+          <div class="study__prose">
+            <ol class="study__reasons">
+              <li><strong>Consistency.</strong> A shared foundation brought consistency across products, from typography and spacing to components and interaction patterns.</li>
+              <li><strong>Efficiency.</strong> The AI guideline gave designers a consistent starting point while keeping design decisions and review with the team.</li>
+              <li><strong>Scalability.</strong> Teams now have a shared foundation they can build on as new product needs emerge.</li>
+            </ol>
+          </div>
+          <figure class="study__figure">
+            <img src="slides/slide-19.jpg" alt="Three business benefits of the design system: consistency, efficiency and scalability, each with a short description." loading="lazy" />
+            <figcaption><a href="index.html#19">View this slide in the deck →</a></figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="impact" class="study__section">
+        <p class="study__kicker">Design system</p>
+        <h2>Impact on different teams</h2>
+        <div class="study__impact-grid">
+          <figure class="study__impact-card">
+            <img src="slides/slide-21.jpg" alt="For designers: no redrawing UI, more problem solving." loading="lazy" />
+            <figcaption>
+              <p class="study__impact-audience">For designers</p>
+              <p class="study__impact-headline">No redrawing UI, more problem solving.</p>
+            </figcaption>
+          </figure>
+          <figure class="study__impact-card">
+            <img src="slides/slide-22.jpg" alt="For engineers: less tech debt, cleaner reusable code base." loading="lazy" />
+            <figcaption>
+              <p class="study__impact-audience">For engineers</p>
+              <p class="study__impact-headline">Less tech debt, cleaner reusable code base.</p>
+            </figcaption>
+          </figure>
+          <figure class="study__impact-card">
+            <img src="slides/slide-23.jpg" alt="For leadership: faster launches, measurable efficiency gains." loading="lazy" />
+            <figcaption>
+              <p class="study__impact-audience">For leadership</p>
+              <p class="study__impact-headline">Faster launches, measurable efficiency gains.</p>
+            </figcaption>
+          </figure>
+          <figure class="study__impact-card">
+            <img src="slides/slide-24.jpg" alt="For users: consistent, delightful experience." loading="lazy" />
+            <figcaption>
+              <p class="study__impact-audience">For users</p>
+              <p class="study__impact-headline">Consistent, delightful experience.</p>
+            </figcaption>
+          </figure>
+        </div>
+        <p class="study__figure-link"><a href="index.html#20">View slides 20–24 in the deck →</a></p>
+      </section>
+
+      <section id="roi" class="study__section">
+        <p class="study__kicker">Results</p>
+        <h2>Expected ROI after DS implementation</h2>
+        <ul class="study__stats">
+          <li><span class="study__stat-num">~35%</span><span class="study__stat-label">Cost saving</span></li>
+          <li><span class="study__stat-num">~40%</span><span class="study__stat-label">Cost to market</span></li>
+          <li><span class="study__stat-num">~35%</span><span class="study__stat-label">Design efficiency</span></li>
+          <li><span class="study__stat-num">~31%</span><span class="study__stat-label">Dev efficiency</span></li>
+        </ul>
+        <p class="study__figure-link"><a href="index.html#25">View this slide in the deck →</a></p>
+      </section>
+
+      <footer class="study__footer">
+        <p>Thanks for reading. <a href="index.html">Browse the full slide deck →</a></p>
+        <button type="button" id="to-top" class="btn btn--ghost">↑ Back to top</button>
+      </footer>
+    </main>
+  </div>
+
+  <script src="case-study.js"></script>
+</body>
+</html>

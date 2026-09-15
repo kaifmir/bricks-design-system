@@ -123,6 +123,22 @@ body {
   margin: 0 0.15rem;
 }
 
+.chrome__link {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+  white-space: nowrap;
+  padding: 0.4rem 0.1rem;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.chrome__link:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
 .btn {
   appearance: none;
   border: 1px solid var(--line);
@@ -187,6 +203,10 @@ body {
 
 @media (max-width: 720px) {
   .chrome__by {
+    display: none;
+  }
+
+  .chrome__link {
     display: none;
   }
 
