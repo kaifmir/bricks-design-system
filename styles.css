@@ -109,20 +109,6 @@ body {
   gap: 0.65rem;
 }
 
-.chrome__count {
-  margin: 0;
-  min-width: 3.5rem;
-  text-align: center;
-  font-variant-numeric: tabular-nums;
-  font-weight: 600;
-  font-size: 0.9rem;
-}
-
-.chrome__slash {
-  opacity: 0.45;
-  margin: 0 0.15rem;
-}
-
 .chrome__link {
   font-size: 0.85rem;
   font-weight: 600;
@@ -186,11 +172,6 @@ body {
   box-shadow: var(--shadow);
   border: 1px solid var(--line);
   aspect-ratio: 16 / 9;
-}
-
-.slide.is-active {
-  outline: 2px solid color-mix(in srgb, var(--accent) 55%, transparent);
-  outline-offset: 3px;
 }
 
 .slide img {
